@@ -57,6 +57,16 @@ export const translations = {
             caseStudiesTitle: "Ready for <span class='text-gradient'>Results?</span>",
             caseStudiesSubtitle: "Let's discuss how we can replicate these successes for your business."
         },
+        approach: {
+            title: "How We <span class='text-gradient'>Work</span>",
+            subtitle: "A proven methodology to deliver high-impact AI agents.",
+            steps: [
+                { title: "Analysis", desc: "We audit your current workflows in Sales, Finance, or Production to identify high-value automation opportunities." },
+                { title: "Development", desc: "We build custom agents tailored to your specific data structure and business rules." },
+                { title: "Integration", desc: "Seamless deployment into your existing software ecosystem with minimal disruption." },
+                { title: "Support", desc: "Ongoing monitoring and optimization to ensure your agents adapt to changing business needs." }
+            ]
+        },
         about: {
             hero: {
                 title: "About <span class='text-gradient'>CoreMind</span>",
@@ -171,6 +181,16 @@ export const translations = {
             teamButton: "Açık Pozisyonları Gör",
             caseStudiesTitle: "Sonuçlara <span class='text-gradient'>Hazır mısınız?</span>",
             caseStudiesSubtitle: "Bu başarıları işletmeniz için nasıl tekrarlayabileceğimizi tartışalım."
+        },
+        approach: {
+            title: "Nasıl <span class='text-gradient'>Çalışıyoruz</span>",
+            subtitle: "Yüksek etkili yapay zeka ajanları sunmak için kanıtlanmış bir metodoloji.",
+            steps: [
+                { title: "Analiz", desc: "Yüksek değerli otomasyon fırsatlarını belirlemek için Satış, Finans veya Üretim alanlarındaki mevcut iş akışlarınızı denetliyoruz." },
+                { title: "Geliştirme", desc: "Özel veri yapınıza ve iş kurallarınıza göre uyarlanmış özel ajanlar oluşturuyoruz." },
+                { title: "Entegrasyon", desc: "Mevcut yazılım ekosistemin minimum kesinti ile sorunsuz bir şekilde devreye alınması." },
+                { title: "Destek", desc: "Ajanlarınızın değişen iş ihtiyaçlarına uyum sağlamasını sağlamak için sürekli izleme ve optimizasyon." }
+            ]
         },
         about: {
             hero: {
