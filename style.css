@@ -179,20 +179,6 @@ section {
     border-radius: var(--radius-full);
     transition: all 0.3s ease;
     cursor: pointer;
-}
-
-.lang-btn:hover {
-    background: rgba(0, 0, 0, 0.05);
-}
-
-.lang-btn.active {
-    color: white;
-    background: var(--primary-color);
-}
-
-/* Scroll to Top Button */
-.scroll-to-top {
-    position: fixed;
     bottom: 30px;
     right: 30px;
     width: 50px;
