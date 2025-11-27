@@ -147,17 +147,17 @@ export const translations = {
             getStarted: "Başlayın"
         },
         hero: {
-            title: "İşletmenizi <span class='text-gradient'>Akıllı Ajanlarla</span> Geleceğe Hazırlayın",
+            title: "İşletmenizi <span class='text-gradient'>Akıllı AI Çalışanlarla</span> Geleceğe Hazırlayın",
             subtitle: "Satış, Finans ve Üretim için özel yapay zeka çözümleri. Karmaşık iş akışlarını otomatikleştirin ve orta ölçekli işletmeniz için yeni büyüme fırsatlarının kilidini açın.",
             bookConsultation: "Danışmanlık Alın",
             exploreSolutions: "Çözümleri Keşfedin",
             teamTitle: "Bizi <span class='text-gradient'>Motive Eden</span> Şey",
             teamSubtitle: "Orta ölçekli işletmelerin gerçeklerini biliyoruz. Ekibimiz yönetim, mühendislik ve yapay zekanın kesişim noktasından geliyor.",
             caseStudiesTitle: "Kendiniz <span class='text-gradient'>Görün</span>",
-            caseStudiesSubtitle: "Akıllı ajanlarımızı kullanan endüstriyel KOBİ'lerden gerçek sonuçlar."
+            caseStudiesSubtitle: "Akıllı AI Çalışanlarımızı kullanan endüstriyel KOBİ'lerden gerçek sonuçlar."
         },
         services: {
-            title: "<span class='text-gradient'>Her Departman</span> İçin Özelleşmiş Ajanlar",
+            title: "<span class='text-gradient'>Her Departman</span> İçin Özelleşmiş AI Çalışanlar",
             subtitle: "Mevcut iş akışlarınıza sorunsuz bir şekilde entegre olmak üzere tasarlanmış özel yapay zeka çözümleri.",
             sales: {
                 title: "Satış Otomasyonu",
@@ -171,7 +171,7 @@ export const translations = {
             },
             production: {
                 title: "Üretim Planlama",
-                desc: "<strong>Envanteri Optimize Edin:</strong> Malzeme Listelerini (BOM) yöneten ve stoksuz kalmayı önlemek için ihtiyaçları tahmin eden ajanlar.",
+                desc: "<strong>Envanteri Optimize Edin:</strong> Malzeme Listelerini (BOM) yöneten ve stoksuz kalmayı önlemek için ihtiyaçları tahmin eden AI Çalışanlar.",
                 features: ["BOM Yönetimi", "Envanter Optimizasyonu", "Üretim Çizelgeleme"]
             },
             consultancy: {
@@ -181,7 +181,7 @@ export const translations = {
             },
             integration: {
                 title: "Entegrasyon & Destek",
-                desc: "<strong>Kesintisiz Bağlantı:</strong> Ajanlarımızın mevcut sistemlerinizle (ERP, CRM, Slack, Teams) kusursuz çalışmasını sağlıyor ve sürekli bakım sunuyoruz.",
+                desc: "<strong>Kesintisiz Bağlantı:</strong> AI Çalışanlarımızın mevcut sistemlerinizle (ERP, CRM, Slack, Teams) kusursuz çalışmasını sağlıyor ve sürekli bakım sunuyoruz.",
                 features: ["Özel API Entegrasyonları", "7/24 İzleme", "Sürekli Optimizasyon"]
             }
         },
@@ -189,7 +189,7 @@ export const translations = {
             title: "<span class='text-gradient'>Referanslar</span>",
             subtitle: "Sektör lideri şirketler tarafından güveniliyor.",
             companies: [
-                { name: "TechCorp Industries", desc: "Yapay zeka ajanlarımızla üretim verimliliğini %45 artıran önde gelen üretim şirketi." },
+                { name: "TechCorp Industries", desc: "AI Çalışanlarımızla üretim verimliliğini %45 artıran önde gelen üretim şirketi." },
                 { name: "Global Logistics Ltd.", desc: "Tüm satış sürecini otomatikleştirerek haftada 20 saat tasarruf sağlayan uluslararası lojistik sağlayıcısı." },
                 { name: "FinanceFlow Solutions", desc: "Gerçek zamanlı nakit akışı görünürlüğü elde eden ve manuel hataları %90 azaltan finansal hizmetler şirketi." },
                 { name: "SmartRetail Group", desc: "Envanter yönetimini optimize eden ve müşteri memnuniyetini %35 artıran perakende zinciri." }
@@ -197,30 +197,30 @@ export const translations = {
         },
         contact: {
             title: "<span class='text-gradient'>Otomasyona</span><br>Hazır mısınız?",
-            subtitle: "İşletmenizi bugün akıllı ajanlarla dönüştürün.",
+            subtitle: "İşletmenizi bugün akıllı AI Çalışanlarla dönüştürün.",
             button: "Ücretsiz Danışmanlık Alın",
             teamTitle: "Misyonumuza <span class='text-gradient'>Katılın</span>",
             teamSubtitle: "İşin geleceğini şekillendirmemize yardımcı olacak yetenekleri her zaman arıyoruz.",
             teamButton: "Açık Pozisyonları Gör",
-            successTitle: "<span class='text-gradient'>Başarı Hikayeleri</span>",
-            successSubtitle: "İşletmelerin akıllı ajanlarla nasıl dönüştüğünü görün.",
-            successButton: "Başarı Hikayelerini Görüntüle",
+            successTitle: "Sizin Gibi Düşünen <span class='text-gradient'>AI Çalışanları</span> ile Çalışmak için Bize Ulaşın",
+            successSubtitle: "İşletmenizi akıllı AI Çalışanlarla dönüştürün.",
+            successButton: "İletişime Geçin",
             caseStudiesTitle: "Sonuçlara <span class='text-gradient'>Hazır mısınız?</span>",
             caseStudiesSubtitle: "Bu başarıları işletmeniz için nasıl tekrarlayabileceğimizi tartışalım."
         },
         approach: {
             title: "Nasıl <span class='text-gradient'>Çalışıyoruz</span>",
-            subtitle: "Yüksek etkili yapay zeka ajanları sunmak için kanıtlanmış bir metodoloji.",
+            subtitle: "Yüksek etkili AI Çalışanlar sunmak için kanıtlanmış bir metodoloji.",
             steps: [
                 { title: "Analiz", desc: "Yüksek değerli otomasyon fırsatlarını belirlemek için Satış, Finans veya Üretim alanlarındaki mevcut iş akışlarınızı denetliyoruz." },
-                { title: "Geliştirme", desc: "Özel veri yapınıza ve iş kurallarınıza göre uyarlanmış özel ajanlar oluşturuyoruz." },
+                { title: "Geliştirme", desc: "Özel veri yapınıza ve iş kurallarınıza göre uyarlanmış özel AI Çalışanlar oluşturuyoruz." },
                 { title: "Entegrasyon", desc: "Mevcut yazılım ekosistemin minimum kesinti ile sorunsuz bir şekilde devreye alınması." },
-                { title: "Destek", desc: "Ajanlarınızın değişen iş ihtiyaçlarına uyum sağlamasını sağlamak için sürekli izleme ve optimizasyon." }
+                { title: "Destek", desc: "AI Çalışanlarınızın değişen iş ihtiyaçlarına uyum sağlamasını sağlamak için sürekli izleme ve optimizasyon." }
             ]
         },
         about: {
             hero: {
-                title: "<span class='text-gradient'>CoreMind</span><span class='desktop-space'> </span><br class='mobile-break'><span class='about-text'>Hakkında</span>",
+                title: "<span class='text-gradient'>CoreMind</span><span class='desktop-space'> </span><br class='mobile-break'><span class='text-primary'>Hakkında</span>",
                 subtitle: "Çalışma şeklinizi dönüştüren akıllı yapay zeka çözümleriyle işletmeleri güçlendiriyoruz."
             },
             mission: {
@@ -243,31 +243,31 @@ export const translations = {
             },
             team: {
                 title: "<span class='text-gradient'>Ekibimizle</span> Tanışın",
-                subtitle: "Sektörünüzü akıllı ajanlarla güçlendirmeye kendini adamış uzmanlar.",
+                subtitle: "Sektörünüzü akıllı AI Çalışanlarla güçlendirmeye kendini adamış uzmanlar.",
                 members: [
                     { name: "Yasin Tür", role: "CEO & Kurucu Ortak", desc: "Yapay zeka stratejisi ve iş süreci otomasyonunda uzman. Karmaşık teknoloji ile pratik iş ihtiyaçları arasındaki boşluğu doldurma konusunda tutkulu." },
                     { name: "Emre Keskin", role: "CTO & Kurucu Ortak", desc: "Büyük teknoloji firmalarında eski Baş Mühendis. Ölçeklenebilir, güvenli ve güvenilir yapay zeka ajanı mimarileri oluşturma konusunda uzman." },
-                    { name: "Bekir Sıtkı Tüzün", role: "CSO & Kurucu Ortak", desc: "Kullanıcı deneyimi ve sorunsuz entegrasyona odaklanır. Ajanlarımızın sezgisel olmasını ve gerçek dünya sorunlarını çözmesini sağlar." }
+                    { name: "Bekir Sıtkı Tüzün", role: "CSO & Kurucu Ortak", desc: "Kullanıcı deneyimi ve sorunsuz entegrasyona odaklanır. AI Çalışanlarımızın sezgisel olmasını ve gerçek dünya sorunlarını çözmesini sağlar." }
                 ]
             }
         },
         caseStudies: {
             hero: {
                 title: "Başarı <span class='text-gradient'>Hikayeleri</span>",
-                subtitle: "Yapay zeka ajanlarımızla operasyonlarını dönüştüren şirketlerden gerçek sonuçlar."
+                subtitle: "AI Çalışanlarımızla operasyonlarını dönüştüren şirketlerden gerçek sonuçlar."
             },
             manufacturing: {
                 title: "Manufacturing Co.",
                 subtitle: "Üretim Planlama Optimizasyonu",
                 challenge: "<strong>Zorluk:</strong> Verimsiz BOM yönetimi ve sık sık yaşanan envanter sıkıntıları üretim gecikmelerine yol açıyordu.",
-                solution: "<strong>Çözüm:</strong> BOM güncellemelerini otomatikleştirmek ve sipariş geçmişine dayalı envanter ihtiyaçlarını tahmin etmek için özel bir Üretim Ajanı devreye alındı.",
+                solution: "<strong>Çözüm:</strong> BOM güncellemelerini otomatikleştirmek ve sipariş geçmişine dayalı envanter ihtiyaçlarını tahmin etmek için özel bir Üretim AI Çalışanı devreye alındı.",
                 metrics: { planning: "Planlama Eforu", efficiency: "Verimlilik Artışı" }
             },
             logistics: {
                 title: "Logistics Ltd.",
                 subtitle: "Satış & CRM Otomasyonu",
                 challenge: "<strong>Zorluk:</strong> Satış ekibi manuel potansiyel müşteri kalifikasyonu ve veri girişi ile boğuşuyor, kritik takipleri kaçırıyordu.",
-                solution: "<strong>Çözüm:</strong> Potansiyel müşterileri otomatik olarak puanlamak ve e-posta etkileşimlerini CRM ile senkronize etmek için bir Satış Ajanı uygulandı.",
+                solution: "<strong>Çözüm:</strong> Potansiyel müşterileri otomatik olarak puanlamak ve e-posta etkileşimlerini CRM ile senkronize etmek için bir Satış AI Çalışanı uygulandı.",
                 metrics: { conversion: "Dönüşüm Oranı", saved: "Haftalık Tasarruf" }
             }
         },
