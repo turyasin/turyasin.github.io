@@ -115,7 +115,7 @@ export const translations = {
         },
         caseStudies: {
             hero: {
-                title: "Success <span class='text-gradient'>Stories</span>",
+                title: "Case <span class='text-gradient'>Studies</span>",
                 subtitle: "Real results from companies that transformed their operations with our AI agents."
             },
             manufacturing: {
@@ -253,7 +253,7 @@ export const translations = {
         },
         caseStudies: {
             hero: {
-                title: "Başarı <span class='text-gradient'>Hikayeleri</span>",
+                title: "Case <span class='text-gradient'>Studies</span>",
                 subtitle: "AI Çalışanlarımızla operasyonlarını dönüştüren şirketlerden gerçek sonuçlar."
             },
             manufacturing: {
