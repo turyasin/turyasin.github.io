@@ -176,7 +176,7 @@ export const translations = {
             ]
         },
         contact: {
-            title: "<span class='text-gradient'>Otomasyona</span> Hazır mısınız?",
+            title: "<span class='text-gradient'>Otomasyona</span><br>Hazır mısınız?",
             subtitle: "İşletmenizi bugün akıllı ajanlarla dönüştürün.",
             button: "Ücretsiz Danışmanlık Alın",
             teamTitle: "Misyonumuza <span class='text-gradient'>Katılın</span>",
