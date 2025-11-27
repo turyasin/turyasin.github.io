@@ -243,6 +243,11 @@ section {
     display: none;
 }
 
+/* Floating CTA Button - Hidden on desktop, visible on mobile */
+.floating-cta {
+    display: none;
+}
+
 /* Scroll to Top Button */
 .scroll-to-top {
     position: fixed;
@@ -626,6 +631,47 @@ section {
         display: none !important;
     }
 
+    /* Hide Header CTA Button on Mobile */
+    .nav-container .btn-primary {
+        display: none !important;
+    }
+
+    /* Floating CTA Button - Always visible on mobile */
+    .floating-cta {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 98;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+        background: var(--primary-color);
+        color: white;
+        border-radius: var(--radius-full);
+        font-weight: 600;
+        font-size: 0.9rem;
+        box-shadow: 0 8px 24px rgba(42, 51, 93, 0.3);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        text-decoration: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100px);
+    }
+
+    .floating-cta.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .floating-cta:hover {
+        background: var(--primary-hover);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(218, 94, 69, 0.4);
+    }
+
     /* Mobile Menu Button */
     .mobile-menu-btn {
         display: flex !important;
@@ -650,18 +696,6 @@ section {
         transition: all 0.3s ease;
         opacity: 1 !important;
         visibility: visible !important;
-    }
-
-    /* Header CTA Button - Mobile Adjustment */
-    .nav-container .btn-primary {
-        display: inline-flex !important;
-        order: 2;
-        padding: 0.4rem 0.8rem !important;
-        font-size: 0.8rem !important;
-        min-width: auto;
-        height: auto;
-        margin-left: auto;
-        margin-right: 0.5rem;
     }
 
     /* Show Mobile Lang Switcher */
@@ -759,5 +793,10 @@ section {
         flex-direction: column;
         gap: var(--spacing-sm);
         text-align: center;
+    }
+
+    /* Adjust scroll-to-top button position to avoid overlap with floating CTA */
+    .scroll-to-top {
+        bottom: 90px;
     }
 }

@@ -94,6 +94,20 @@ function initLanguageSwitching() {
     });
   }
 
+  // Floating CTA Button (Mobile)
+  const floatingCta = document.getElementById('floatingCta');
+
+  if (floatingCta) {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 200) {
+        floatingCta.classList.add('visible');
+      } else {
+        floatingCta.classList.remove('visible');
+      }
+    });
+  }
+
+
   // Mobile Menu Toggle
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
