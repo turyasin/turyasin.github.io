@@ -1,23 +1,16 @@
 {
-    "name": "coremind-flowise",
+    "name": "flowise-deploy",
     "version": "1.0.0",
-    "description": "CoreMind AI Platform - Flowise Backend",
-    "main": "index.js",
+    "description": "Flowise Deployment",
+    "private": true,
     "scripts": {
-        "build": "echo 'Build complete'",
+        "build": "echo 'No build step required'",
         "start": "npx flowise start"
     },
-    "keywords": [
-        "flowise",
-        "ai",
-        "chatbot"
-    ],
-    "author": "CoreMind",
-    "license": "MIT",
+    "engines": {
+        "node": ">=18.15.0"
+    },
     "dependencies": {
         "flowise": "^2.0.0"
-    },
-    "engines": {
-        "node": ">=18.0.0"
     }
 }
