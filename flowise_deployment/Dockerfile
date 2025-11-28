@@ -1,12 +1,12 @@
 FROM node:18-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Install Flowise globally
-RUN npm install -g flowise
+# Install Flowise
+RUN npm install -g flowise@2.0.0
 
-# Expose the port
-EXPOSE 3000
+# Expose port
+EXPOSE 8080
 
-# Start Flowise binding to 0.0.0.0 (Required for Render)
-CMD ["flowise", "start", "--PORT=3000", "--FLOWISE_HOST=0.0.0.0"]
+# Start Flowise
+CMD ["flowise", "start"]
