@@ -4,8 +4,8 @@
     "description": "CoreMind AI Platform - Flowise Backend",
     "main": "index.js",
     "scripts": {
-        "build": "npm install flowise",
-        "start": "flowise start"
+        "build": "echo 'Build complete'",
+        "start": "npx flowise start"
     },
     "keywords": [
         "flowise",
