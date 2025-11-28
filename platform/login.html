@@ -20,15 +20,15 @@
             <h2 style="margin-bottom: 10px;">Welcome Back</h2>
             <p style="color: var(--text-muted); margin-bottom: 30px;">Sign in to manage your AI workforce</p>
 
-            <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+            <form id="loginForm">
                 <div class="input-group">
                     <label>Work Email</label>
-                    <input type="email" class="input-field" placeholder="name@company.com" value="demo@coremind.ai">
+                    <input type="email" id="email" class="input-field" placeholder="name@company.com" required>
                 </div>
 
                 <div class="input-group">
                     <label>Password</label>
-                    <input type="password" class="input-field" value="password123">
+                    <input type="password" id="password" class="input-field" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
@@ -38,7 +38,49 @@
                 Don't have an account? <a href="#" style="color: var(--primary);">Contact Sales</a>
             </p>
         </div>
-    </div>
+
+        loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const email = emailInput.value;
+        const password = passwordInput.value;
+
+        // Show loading state
+        submitBtn.textContent = 'Signing in...';
+        submitBtn.disabled = true;
+
+        try {
+        const { data, error } = await supabase.auth.signInWithPassword({
+        email: email,
+        password: password,
+        });
+
+        if (error) throw error;
+
+        // Login successful
+        console.log('User logged in:', data.user);
+        window.location.href = 'dashboard.html';
+
+        } catch (error) {
+        console.error('Login error:', error.message);
+        alert('Login failed: ' + error.message);
+
+        // Reset button
+        submitBtn.textContent = 'Sign In';
+        submitBtn.disabled = false;
+        }
+        });
+
+        // Check if already logged in
+        async function checkSession() {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session) {
+        window.location.href = 'dashboard.html';
+        }
+        }
+
+        checkSession();
+        </script>
 </body>
 
 </html>
