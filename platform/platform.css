@@ -11,7 +11,6 @@
     --header-height: 70px;
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -273,15 +272,16 @@ body {
 .btn-sm {
     padding: 6px 12px;
     font-size: 0.85rem;
-    border-radius: 6px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
+    background: #F85F68;
     color: white;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .btn-sm:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: #e54e5d;
+    transform: translateY(-2px);
 }
 
 /* Mobile Responsiveness */
