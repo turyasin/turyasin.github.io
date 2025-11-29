@@ -155,16 +155,16 @@
                 <div class="chat-container">
                     <div class="chat-messages" id="chatMessages">
                         <div class="message bot">
-                            Hello! I am your HR Assistant. You can upload PDF documents and ask me questions about them.
-                            How can I help you today?
+                            Merhaba! Ben İK Asistanınızım. PDF belgeleri yükleyip onlar hakkında sorular sorabilirsiniz.
+                            Size nasıl yardımcı olabilirim?
                         </div>
                     </div>
-                    <div class="typing-indicator" id="typingIndicator">Assistant is typing...</div>
+                    <div class="typing-indicator" id="typingIndicator">Asistan yazıyor...</div>
 
                     <div class="file-preview" id="filePreview"></div>
 
                     <div class="chat-input-area">
-                        <label for="fileInput" class="file-upload-label" title="Upload PDF">
+                        <label for="fileInput" class="file-upload-label" title="PDF Yükle">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
@@ -176,9 +176,9 @@
                         <input type="file" id="fileInput" class="file-upload-input" accept=".pdf"
                             onchange="handleFileSelect(event)">
 
-                        <input type="text" class="chat-input" id="userInput" placeholder="Type your question here..."
+                        <input type="text" class="chat-input" id="userInput" placeholder="Sorunuzu buraya yazın..."
                             onkeypress="handleKeyPress(event)">
-                        <button class="send-btn" onclick="sendMessage()">Send</button>
+                        <button class="send-btn" onclick="sendMessage()">Gönder</button>
                     </div>
                 </div>
             </div>
@@ -226,7 +226,7 @@
             const file = event.target.files[0];
             const preview = document.getElementById('filePreview');
             if (file) {
-                preview.textContent = `Selected file: ${file.name}`;
+                preview.textContent = `Seçilen dosya: ${file.name}`;
                 preview.style.display = 'block';
             } else {
                 preview.style.display = 'none';
@@ -246,9 +246,9 @@
             if (!question && !file) return;
 
             // Add User Message
-            let displayMessage = question;
+            let displayMessage = question || "Bu dosya hakkında bilgi ver";
             if (file) {
-                displayMessage = `[File: ${file.name}] ${question}`;
+                displayMessage = `[Dosya: ${file.name}] ${question || "Bu dosya hakkında bilgi ver"}`;
             }
             appendMessage(displayMessage, 'user');
 
@@ -257,43 +257,27 @@
             // Show Typing
             typingIndicator.style.display = 'block';
 
-            // Use Supabase User ID as Session ID for persistent, user-specific memory
+            // Use Supabase User ID as Session ID
             let sessionId = currentUser ? currentUser.id : 'anonymous';
 
             try {
                 const API_URL = window.CONFIG.FLOWISE_API_URL;
-                let response;
-                let data;
 
-                if (file) {
-                    // Send file with FormData
-                    const formData = new FormData();
-                    formData.append("files", file);
-                    formData.append("question", question || "Bu dosya hakkında bana özet bilgi ver");
+                // Send as JSON (Flowise will use the pre-loaded PDF)
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        question: question || "Bu dosya hakkında bana özet bilgi ver",
+                        overrideConfig: {
+                            sessionId: sessionId
+                        }
+                    })
+                });
 
-                    console.log("Uploading file and asking question...");
-
-                    response = await fetch(API_URL, {
-                        method: "POST",
-                        body: formData
-                    });
-                } else {
-                    // Send as JSON if text only
-                    response = await fetch(API_URL, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            question: question,
-                            overrideConfig: {
-                                sessionId: sessionId
-                            }
-                        })
-                    });
-                }
-
-                data = await response.json();
+                const data = await response.json();
 
                 // Hide Typing
                 typingIndicator.style.display = 'none';
@@ -306,13 +290,13 @@
                 if (data && data.text) {
                     appendMessage(data.text, 'bot');
                 } else {
-                    appendMessage("Sorry, I couldn't get a response.", 'bot');
+                    appendMessage("Üzgünüm, cevap alamadım.", 'bot');
                 }
 
             } catch (error) {
                 console.error("Error:", error);
                 typingIndicator.style.display = 'none';
-                appendMessage("Error connecting to the agent. Make sure Flowise is running.", 'bot');
+                appendMessage("Bağlantı hatası. Lütfen tekrar deneyin.", 'bot');
             }
         }
 
