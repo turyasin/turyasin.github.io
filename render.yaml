@@ -3,8 +3,7 @@ services:
   - type: web
     name: coremind-backend
     env: docker
-    dockerContext: .
-    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
     plan: free
     envVars:
       - key: PORT
