@@ -16,3 +16,20 @@ services:
         value: --max-old-space-size=460
       - key: CORS_ORIGINS
         value: https://turyasin.github.io
+      # Persistence Configuration (Supabase)
+      - key: DATABASE_TYPE
+        value: postgres
+      - key: DATABASE_PORT
+        value: 5432
+      - key: DATABASE_HOST
+        value: db.camyogwbseuxfrjxnjzw.supabase.co
+      - key: DATABASE_NAME
+        value: postgres
+      - key: DATABASE_USER
+        value: postgres
+      - key: DATABASE_PASSWORD
+        sync: false # Render Dashboard'dan girilecek
+      - key: APIKEY_PATH
+        value: /opt/flowise/.flowise
+      - key: SECRET
+        sync: false # Rastgele bir şifreleme anahtarı
