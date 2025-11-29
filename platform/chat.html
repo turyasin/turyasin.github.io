@@ -7,14 +7,14 @@
     <title>Chat - CoreMind Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="platform.css">
     <style>
         .chat-container {
             display: flex;
             flex-direction: column;
             height: calc(100vh - 140px);
-            /* Adjust based on header/padding */
             background: rgba(0, 0, 0, 0.2);
             border-radius: 12px;
             border: 1px solid var(--border);
@@ -40,7 +40,7 @@
 
         .message.user {
             align-self: flex-end;
-            background: var(--primary-gradient);
+            background: #F85F68;
             color: white;
             border-bottom-right-radius: 2px;
         }
@@ -83,16 +83,32 @@
             margin-left: 10px;
             display: none;
         }
+
+        .send-btn {
+            background: #F85F68 !important;
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .send-btn:hover {
+            background: #e54e5d !important;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 
 <body>
     <div class="dashboard-layout">
-        <!-- Sidebar (Same as dashboard) -->
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <div class="login-logo" style="font-size: 1.5rem; margin: 0;">
-                    <span class="text-gradient">Core</span>Mind
+                <div class="login-logo" style="font-size: 1.5rem; margin: 0; font-family: 'Outfit', sans-serif;">
+                    <span style="color: #F85F68;">Core</span><span style="color: #77B1AD;">Mind</span>
                 </div>
             </div>
             <nav>
@@ -142,7 +158,7 @@
                     <div class="chat-input-area">
                         <input type="text" class="chat-input" id="userInput" placeholder="Type your question here..."
                             onkeypress="handleKeyPress(event)">
-                        <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+                        <button class="send-btn" onclick="sendMessage()">Send</button>
                     </div>
                 </div>
             </div>
@@ -173,7 +189,6 @@
         async function checkSession() {
             const { data: { session } } = await supabase.auth.getSession();
             if (!session) {
-                // Redirect to login if not authenticated
                 window.location.href = 'login.html';
             }
         }
@@ -205,7 +220,6 @@
             }
 
             try {
-                // Use the API URL from config.js
                 const API_URL = window.CONFIG.FLOWISE_API_URL;
 
                 const response = await fetch(API_URL, {
