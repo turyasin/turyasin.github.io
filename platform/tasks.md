@@ -8,16 +8,21 @@
 - [x] **Integration:** Linked Dashboard "Chat Now" button to the chat interface.
 - [x] **Session Management:** Implemented `sessionId` in `chat.html` to maintain conversation context.
 - [x] **Bug Fixes:** Resolved layout issues in dashboard and chat pages.
+- [x] **Cloud Deployment:**
+    - [x] Deploy Frontend (Dashboard/Chat) to GitHub Pages.
+    - [x] Deploy Backend (Flowise) via ngrok (local tunnel) with auto-update script.
+- [x] **Authentication:**
+    - [x] Implement real user login/signup using Supabase Auth.
+    - [x] Secure the dashboard routes.
+
+## Current Task
+- [x] **Main Site Integration:**
+    - [x] Add "Login" button to `index.html`, `about.html`, `casestudies.html` navigation.
+    - [x] Update `translations.js` with login text.
 
 ## Next Steps (Future Sessions)
-- [ ] **Cloud Deployment:**
-    - Deploy Frontend (Dashboard/Chat) to Vercel or Netlify.
-    - Deploy Backend (Flowise) to a cloud provider like Render, Railway, or DigitalOcean.
 - [ ] **Data Persistence:**
     - Migrate from "In-Memory Vector Store" to a persistent Vector Database (Pinecone, Weaviate, or Supabase).
-- [ ] **Authentication:**
-    - Implement real user login/signup using Supabase Auth or Firebase.
-    - Secure the dashboard routes.
 - [ ] **Advanced Integration:**
     - Enable file uploads directly from the Dashboard (bypassing Flowise UI).
     - Display real-time agent analytics in the dashboard.
