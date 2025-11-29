@@ -284,6 +284,33 @@ body {
     transform: translateY(-2px);
 }
 
+/* Chat File Upload Styles */
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+
+.file-upload-label:hover {
+    color: var(--primary);
+}
+
+.file-upload-input {
+    display: none;
+}
+
+.file-preview {
+    font-size: 0.8rem;
+    color: var(--primary);
+    margin-bottom: 5px;
+    display: none;
+    padding: 0 20px;
+}
+
 /* Mobile Responsiveness */
 .mobile-menu-btn {
     display: none;
