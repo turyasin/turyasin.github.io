@@ -1,9 +1,4 @@
-// Configuration for different environments
-const config = {
-    // Production Flowise URL (ngrok tunnel)
-    // NOTE: You need to import your HR_Assistant_RAG.json flow and update the chatflow ID
-    FLOWISE_API_URL: 'https://alexandra-sternal-jaunita.ngrok-free.dev/api/v1/prediction/a7851946-02e8-442e-b880-14c0d0d221c6',
+window.CONFIG = {
+    // Flowise API URL - Production
+    FLOWISE_API_URL: "https://cloud.flowiseai.com/api/v1/prediction/ff7506fd-7270-4162-a96f-45ff0241dec5"
 };
-
-// Export for use in chat.html
-window.CONFIG = config;

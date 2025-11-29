@@ -7,11 +7,12 @@ primary_region = "fra"
 [build]
 
 [env]
-  PORT = "8080"
+  PORT = "3000"
   FLOWISE_USERNAME = "admin"
+  FLOWISE_PASSWORD = "password123"
 
 [http_service]
-  internal_port = 8080
+  internal_port = 3000
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
