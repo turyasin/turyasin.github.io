@@ -12,8 +12,14 @@
                 "label": "ChatOpenAI",
                 "name": "chatOpenAI",
                 "type": "ChatOpenAI",
+                "baseClasses": [
+                    "ChatOpenAI",
+                    "BaseChatModel",
+                    "BaseLanguageModel"
+                ],
+                "category": "Chat Models",
                 "inputs": {
-                    "modelName": "gpt-4",
+                    "modelName": "gpt-3.5-turbo",
                     "temperature": 0.7
                 }
             }
@@ -30,18 +36,18 @@
                 "label": "Buffer Memory",
                 "name": "bufferMemory",
                 "type": "BufferMemory",
-                "inputs": {
-                    "memoryKey": "chat_history",
-                    "inputKey": "question",
-                    "outputKey": "text"
-                }
+                "baseClasses": [
+                    "BufferMemory",
+                    "BaseMemory"
+                ],
+                "category": "Memory"
             }
         },
         {
             "id": "conversationalRetrievalQAChain_0",
             "position": {
-                "x": 600,
-                "y": 150
+                "x": 800,
+                "y": 100
             },
             "type": "customNode",
             "data": {
@@ -49,8 +55,13 @@
                 "label": "Conversational Retrieval QA Chain",
                 "name": "conversationalRetrievalQAChain",
                 "type": "ConversationalRetrievalQAChain",
+                "baseClasses": [
+                    "ConversationalRetrievalQAChain",
+                    "BaseChain"
+                ],
+                "category": "Chains",
                 "inputs": {
-                    "systemMessage": "You are a helpful HR Assistant. Use the following pieces of context to answer the question at the end. If the answer is not in the context, say that you don't know, don't try to make up an answer."
+                    "systemMessage": "You are a helpful HR Assistant. Use the following pieces of context to answer the question at the end."
                 }
             }
         },
@@ -58,21 +69,26 @@
             "id": "openaiEmbeddings_0",
             "position": {
                 "x": 0,
-                "y": 600
+                "y": 500
             },
             "type": "customNode",
             "data": {
                 "id": "openaiEmbeddings_0",
                 "label": "OpenAI Embeddings",
                 "name": "openAIEmbeddings",
-                "type": "OpenAIEmbeddings"
+                "type": "OpenAIEmbeddings",
+                "baseClasses": [
+                    "OpenAIEmbeddings",
+                    "Embeddings"
+                ],
+                "category": "Embeddings"
             }
         },
         {
             "id": "recursiveCharacterTextSplitter_0",
             "position": {
-                "x": 300,
-                "y": 750
+                "x": 200,
+                "y": 700
             },
             "type": "customNode",
             "data": {
@@ -80,6 +96,11 @@
                 "label": "Recursive Character Text Splitter",
                 "name": "recursiveCharacterTextSplitter",
                 "type": "RecursiveCharacterTextSplitter",
+                "baseClasses": [
+                    "RecursiveCharacterTextSplitter",
+                    "TextSplitter"
+                ],
+                "category": "Text Splitters",
                 "inputs": {
                     "chunkSize": 1000,
                     "chunkOverlap": 200
@@ -89,8 +110,8 @@
         {
             "id": "pdfFileLoader_0",
             "position": {
-                "x": 300,
-                "y": 450
+                "x": 0,
+                "y": 700
             },
             "type": "customNode",
             "data": {
@@ -98,6 +119,11 @@
                 "label": "Pdf File Loader",
                 "name": "pdfFileLoader",
                 "type": "PdfFileLoader",
+                "baseClasses": [
+                    "PdfFileLoader",
+                    "BaseDocumentLoader"
+                ],
+                "category": "Document Loaders",
                 "inputs": {
                     "usage": "upload"
                 }
@@ -106,7 +132,7 @@
         {
             "id": "inMemoryVectorStore_0",
             "position": {
-                "x": 600,
+                "x": 500,
                 "y": 500
             },
             "type": "customNode",
@@ -114,7 +140,12 @@
                 "id": "inMemoryVectorStore_0",
                 "label": "In-Memory Vector Store",
                 "name": "memoryVectorStore",
-                "type": "MemoryVectorStore"
+                "type": "MemoryVectorStore",
+                "baseClasses": [
+                    "MemoryVectorStore",
+                    "VectorStore"
+                ],
+                "category": "Vector Stores"
             }
         }
     ],
