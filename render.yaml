@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: coremind-flowise
+    env: docker
+    plan: free
+    repo: https://github.com/turyasin/turyasin.github.io
+    branch: main
+    rootDir: flowise_deployment
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: FLOWISE_USERNAME
+        value: admin
+      - key: FLOWISE_PASSWORD
+        value: password123
+      # Veritabanı kalıcılığı için Supabase bilgileri buraya eklenecek
+      # - key: DATABASE_TYPE
+      #   value: postgres
+      # - key: DATABASE_URL
+      #   value: ...
