@@ -1,14 +1,31 @@
 services:
+  # Custom AI Backend
+  - type: web
+    name: coremind-backend
+    env: docker
+    dockerContext: ./backend
+    plan: free
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        value: https://turyasin.github.io
+
+  # Flowise (Legacy/Backup)
   - type: web
     name: coremind-flowise
     env: docker
+    dockerContext: ./flowise_deployment
     plan: free
-    repo: https://github.com/turyasin/turyasin.github.io
-    branch: main
-    rootDir: flowise_deployment
     envVars:
       - key: PORT
-        value: 10000
+        value: 3000
       - key: FLOWISE_USERNAME
         value: admin
       - key: FLOWISE_PASSWORD
@@ -17,8 +34,3 @@ services:
         value: --max-old-space-size=460
       - key: CORS_ORIGINS
         value: https://turyasin.github.io
-      # Veritabanı kalıcılığı için Supabase bilgileri buraya eklenecek
-      # - key: DATABASE_TYPE
-      #   value: postgres
-      # - key: DATABASE_URL
-      #   value: ...
