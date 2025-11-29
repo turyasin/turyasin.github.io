@@ -13,6 +13,8 @@ services:
         value: admin
       - key: FLOWISE_PASSWORD
         value: password123
+      - key: NODE_OPTIONS
+        value: --max-old-space-size=460
       # Veritabanı kalıcılığı için Supabase bilgileri buraya eklenecek
       # - key: DATABASE_TYPE
       #   value: postgres
