@@ -255,69 +255,6 @@
             input.value = '';
 
             // Show Typing
-            typingIndicator.style.display = 'block';
-
-            // Use Supabase User ID as Session ID for persistent, user-specific memory
-            let sessionId = currentUser ? currentUser.id : 'anonymous';
-
-            try {
-                const API_URL = window.CONFIG.FLOWISE_API_URL;
-                let response;
-
-                if (file) {
-                    // Send as FormData if file exists
-                    const formData = new FormData();
-                    formData.append("files", file);
-                    formData.append("question", question || "Analyze this document");
-                    formData.append("overrideConfig", JSON.stringify({ sessionId: sessionId }));
-
-                    response = await fetch(API_URL, {
-                        method: "POST",
-                        body: formData
-                    });
-                } else {
-                    // Send as JSON if text only
-                    response = await fetch(API_URL, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            question: question,
-                            overrideConfig: {
-                                sessionId: sessionId
-                            }
-                        })
-                    });
-                }
-
-                const data = await response.json();
-
-                // Hide Typing
-                typingIndicator.style.display = 'none';
-
-                // Clear file input
-                fileInput.value = '';
-                filePreview.style.display = 'none';
-
-                // Add Bot Message
-                if (data && data.text) {
-                    appendMessage(data.text, 'bot');
-                } else {
-                    appendMessage("Sorry, I couldn't get a response.", 'bot');
-                }
-
-            } catch (error) {
-                console.error("Error:", error);
-                typingIndicator.style.display = 'none';
-                appendMessage("Error connecting to the agent. Make sure Flowise is running.", 'bot');
-            }
-        }
-
-        function appendMessage(text, sender) {
-            const messagesDiv = document.getElementById('chatMessages');
-            const msgDiv = document.createElement('div');
-            msgDiv.className = `message ${sender}`;
             msgDiv.textContent = text;
             messagesDiv.appendChild(msgDiv);
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
