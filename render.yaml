@@ -33,3 +33,22 @@ services:
         value: /opt/flowise/.flowise
       - key: SECRET
         sync: false # Rastgele bir şifreleme anahtarı
+
+  - type: web
+    name: coremind-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        value: https://turyasin.github.io
